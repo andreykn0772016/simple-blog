@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+
+
+
+<div class="container">
+    <header class="jumbotron">
+    <div class="container">
+    <h1>Добро пожаловать!</h1>
+    <p>У нас вы сможете не только выбрать окна, но и заказать доставку с последующей установкой</p>
+    <p>
+        <a class="btn btn-primary btn-md" href="/works/new">Добавить новость</a>
+    </p>
+</div>
+
+</header>
+    <div class="row text-center" style="display:flex; flex-flow: row wrap">
+        <% works.forEach(function(work){ %>
+    <div class="col-md-3 col-sm-6">
+        <div class="thumbnail">
+            <img src="<%= work.image %>" alt="">
+            <div class="caption">
+                <h4 class="content-title">
+                    <%= work.name %>
+                </h4>
+            </div>
+            <div class="more">
+                <a href="/works/<%= work._id %>" class="btn btn-primary">Узнать больше</a>
+            </div>
+        </div>
+
+
+    </div>
+        <% }); %>
+    </div>
+</div>
+<% include ../partials/footer %>

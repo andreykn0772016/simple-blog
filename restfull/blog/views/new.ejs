@@ -1,0 +1,31 @@
+<% include ./partials/header %>
+
+  <div class="ui main text container segment">
+      <div class="ui huge header">Новое в блоге</div>
+      <form action="/blogs" class="ui form" method="post">
+          <div class="field">
+              <label>Заголовок</label>
+              <input type="text" name="blog[title]" placeholder="Заголовок">
+          </div>
+
+          <div class="field">
+              <label>Картинка</label>
+              <input type="text" class="images" name="blog[image]" placeholder="Добавить картинку">
+          </div>
+
+          <div class="field">
+              <label>Текст</label>
+              <textarea name="blog[body]" cols="30" rows="10" placeholder="Поле для текста"></textarea>
+
+          </div>
+
+
+
+          <input class="ui violet big basic button" type="submit" placeholder="Отправить">
+      </form>
+
+  </div>
+
+<% include ./partials/footer %>
+
+

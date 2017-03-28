@@ -1,0 +1,42 @@
+<% include  ./partials/header%>
+
+<div class="ui main text container">
+    <div class="ui huge header">Простой блог для портфолио</div>
+    <div class="ui huge header">Основные технологии: NodeJs, Express, EJS, Semantic UI</div>
+    <div class="meta">
+        <span class="description">Вспомогательные технологии: Scss, Java Script</span>
+    </div>
+
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% blogs.forEach(function(blog){ %>
+            <div class="item">
+                <div class="image">
+                    <img src="<%= blog.image %>" alt="">
+                </div>
+                <div class="content">
+                    <a href="/blogs/<%= blog._id %>" class="header"><%= blog.title %></a>
+                    <div class="meta">
+                        <span><%= blog.created.toDateString() %></span>
+                    </div>
+                    <div class="description">
+                        <p><%- blog.body.substring(0,300) %>...</p>
+                    </div>
+                    <div class="extra">
+                        <a href="/blogs/<%= blog._id %>" class="ui floated basic violet button">
+                            Читать ещё
+                            <i class="right chevron icon"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<% include  ./partials/footer%>
